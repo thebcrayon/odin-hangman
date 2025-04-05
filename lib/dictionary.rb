@@ -2,10 +2,12 @@
 
 # Dictionary Class
 class Dictionary
-  def initialize(file_path)
-    f = File.open(file_path).readlines.map do |line|
-      line.scan(/\w+/)
+  attr_accessor :word_list
+
+  def initialize(file_path, num_range = nil)
+    words = File.readlines(file_path).map { |line| line.split("\n") }.flatten
+    @word_list = words.select do |word|
+      num_range ? word.size.between?(num_range.min, num_range.max) : word
     end
-    @word_list = f.select { |word| word.size.between?(5, 12) }
   end
 end

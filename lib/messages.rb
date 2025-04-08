@@ -31,6 +31,7 @@ module Messages
         puts "| #{info.ljust(longest_line)} |"
         puts row_decoration_plain(longest_line) if index == game_info.size - 1
       end
+      print "\n"
     end
 
     def print_new_line
@@ -47,8 +48,8 @@ module Messages
       gets.chomp
     end
 
-    def prompt_guess_quantity
-      puts 'Who many tries to guess the code?'
+    def prompt_letter_guess
+      puts 'Type a letter to guess:'
       gets.chomp
     end
 

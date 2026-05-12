@@ -1,0 +1,9 @@
+---
+secret_word: fruit
+correct_guesses:
+- r
+incorrect_guesses:
+- a
+- b
+- s
+guess_limit: 5
